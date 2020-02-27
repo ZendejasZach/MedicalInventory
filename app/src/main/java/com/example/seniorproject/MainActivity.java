@@ -43,4 +43,10 @@ public class MainActivity extends AppCompatActivity {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
+	//Notes
+	//Check for inventory JSON file
+	//	if no file, play initial introduction
+	//	if file, load items
+	//show items according to settings
+	//	--add settings for sorting order (count, aplpha, most used, etc)--
 }

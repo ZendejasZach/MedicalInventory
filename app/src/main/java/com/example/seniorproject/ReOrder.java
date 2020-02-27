@@ -26,5 +26,23 @@ public class ReOrder extends AppCompatActivity {
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
+	
+	//Pseudocode
+	//Load JSON file
+	//	if no file, throw error
+	//	if no data in JSON file, throw error
+	//Organize by supplier then alphabetical order.
+	//	--Change sorting in settings?--
+	//	--add checkmark to mark something re-ordered?--
+	//	--Potentially add a mark all button--
+	//Show item
+	//	Name
+	//	current count
+	//	ReOrder Amount (From Intake)
+	//Show supplier information
+	//	Name
+	//	Contact
+	//	Phone number
+	//		Tapping number will send the number to the dialer. --May need to add this to SRS document--
 
 }

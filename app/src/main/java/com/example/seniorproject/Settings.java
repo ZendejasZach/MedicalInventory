@@ -10,4 +10,9 @@ public class Settings extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
     }
+	//Notes
+	//Sorting settings for home page
+	//sorting settings for reorder page
+	//Option to replay initial video
+	//Option to remove JSON file and start fresh
 }
