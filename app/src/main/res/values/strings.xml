@@ -8,4 +8,6 @@
     <string name="title_activity_re_order">Reorder</string>
     <string name="intake_name">Enter item name</string>
     <string name="intake_update">Update</string>
+    <string name="HomeNav">Home</string>
+    <string name="intakeAmount">Item Amount</string>
 </resources>
