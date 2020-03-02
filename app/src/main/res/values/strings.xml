@@ -6,4 +6,6 @@
     <string name="title_activity_item_intake">Intake</string>
     <string name="title_activity_settings">Settings</string>
     <string name="title_activity_re_order">Reorder</string>
+    <string name="intake_name">Enter item name</string>
+    <string name="intake_update">Update</string>
 </resources>
