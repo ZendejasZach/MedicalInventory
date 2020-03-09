@@ -10,4 +10,9 @@
     <string name="intake_update">Update</string>
     <string name="HomeNav">Home</string>
     <string name="intakeAmount">Item Amount</string>
+    <string name="intake_location">Location</string>
+    <string name="intake_supplier">Supplier</string>
+    <string name="intake_auto_deduction">Enable Auto Deduction</string>
+    <string name="intake_notes">Notes</string>
+    <string name="intake_alert">Enable Low Count Alert</string>
 </resources>

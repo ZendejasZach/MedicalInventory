@@ -8,22 +8,6 @@
     tools:context=".ItemIntake"
     tools:showIn="@layout/activity_item_intake">
 
-    <EditText
-        android:id="@+id/intake_name"
-        style="@style/Base.Widget.MaterialComponents.TextInputEditText"
-        android:layout_width="252dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/intake_name"
-        android:inputType="textPersonName|text"
-        android:text="@string/intake_name"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Item Name" />
-
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
@@ -33,6 +17,114 @@
         android:text="@string/intake_update"
         app:layout_constraintBottom_toTopOf="@+id/IntakeNav"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/intake_name"
+        style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/intake_name"
+        android:inputType="textPersonName|text"
+        android:text="@string/intake_name"
+        app:layout_constraintEnd_toEndOf="@+id/intake_amount"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Item Name" />
+
+    <EditText
+        android:id="@+id/intake_amount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/intakeAmount"
+        android:inputType="textPersonName"
+        android:text="@string/intakeAmount"
+        app:layout_constraintEnd_toStartOf="@+id/intake_num"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/intake_name" />
+
+    <EditText
+        android:id="@+id/intake_num"
+        android:layout_width="82dp"
+        android:layout_height="43dp"
+        android:layout_marginEnd="16dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/intakeAmount"
+        android:inputType="number"
+        app:layout_constraintBaseline_toBaselineOf="@+id/intake_amount"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="281dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/intake_location"
+        app:layout_constraintEnd_toEndOf="@+id/intake_amount"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/intake_amount" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/intake_supplier"
+        app:layout_constraintEnd_toEndOf="@+id/editText"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:text="@string/intake_notes"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch2" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/intake_auto_deduction"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText2"
+        tools:visibility="visible" />
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/IntakeNav"
@@ -47,31 +139,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/IntakeNav" />
 
-    <EditText
-        android:id="@+id/intake_amount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <Switch
+        android:id="@+id/switch2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/intakeAmount"
-        android:inputType="textPersonName"
-        android:text="@string/intakeAmount"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/intake_name" />
-
-    <EditText
-        android:id="@+id/intake_num"
-        android:layout_width="75dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintBaseline_toBaselineOf="@+id/intake_amount"
+        android:text="@string/intake_alert"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/intake_amount"
-        android:autofillHints="" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch1" />
 
 </android.support.constraint.ConstraintLayout>
