@@ -30,18 +30,17 @@ public class ItemIntake extends AppCompatActivity {
 	// Pseudocode section
 	//
 	//Build page
-	//	Item Name field
-	//	Item count field
+	//	Item Name field DONE
+	//	Item count field DONE
 	//		increase and decrease buttons
-	//	Supplier
-	//	ReOrder amount
-	//		--This is the amount that they will need to reorder and will appear in the reorder screen-- 
-	//	Notes section
+	//	Supplier DONE
+	//	Notes section DONE
 	//
 	//Check for existing inventory file
 	//	if no file, create blank either now or after first intake submit
 	//	if file, load supplier information
 	//populate supplier information into supplier dropdown.
+	//	Will need to likely make new page for supplier input
 	//Once submit is clicked, input data into JSON file
 	//	--Should some fields be required?--
 	//
