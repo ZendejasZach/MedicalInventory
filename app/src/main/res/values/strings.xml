@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SeniorProject</string>
+    <string name="app_name">MedicalInventory</string>
     <string name="title_home">Inventory</string>
     <string name="title_inventory">Inventory</string>
     <string name="title_intake">Intake</string>

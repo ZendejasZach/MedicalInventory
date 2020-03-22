@@ -3,7 +3,7 @@
 
     <!--TODO: Change icons-->
     <item
-        android:id="@+id/navigation_intake"
+        android:id="@+id/IntakeNav"
         android:icon="@drawable/ic_home_black_24dp"
         android:title="@string/title_activity_item_intake" />
 

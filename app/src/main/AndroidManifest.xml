@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.seniorproject">
+    package="com.example.MedicalInventory">
 
     <application
         android:allowBackup="true"
@@ -10,30 +10,20 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".ReOrder"
+            android:name="com.example.MedicalInventory.ReOrder"
             android:label="@string/title_activity_re_order"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="com.example.MedicalInventory.MainPage"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.seniorproject.MainActivity" />
+                android:value="com.example.MedicalInventory.MainPage" />
         </activity>
-        <activity android:name=".SettingsActivity" />
+        <activity android:name="com.example.MedicalInventory.SettingsActivity" />
         <activity
-            android:name=".ItenIntakeActivity"
-            android:label="@string/title_activity_item_intake"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.seniorproject.MainActivity" />
-        </activity>
-        <activity
-            android:name=".MainActivity"
+            android:name="com.example.MedicalInventory.MainPage"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
