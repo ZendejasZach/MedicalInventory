@@ -6,4 +6,15 @@
     android:layout_height="match_parent"
     tools:context="com.example.MedicalInventory.ManageItems">
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navManage"
+        android:layout_width="-0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp"
+        app:menu="@menu/navigation"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
