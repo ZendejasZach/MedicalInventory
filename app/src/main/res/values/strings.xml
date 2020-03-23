@@ -15,4 +15,5 @@
     <string name="intake_auto_deduction">Enable Auto Deduction</string>
     <string name="intake_notes">Notes</string>
     <string name="intake_alert">Enable Low Count Alert</string>
+    <string name="NavManage">Manage</string>
 </resources>
