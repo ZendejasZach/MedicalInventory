@@ -1,11 +1,12 @@
 package com.example.MedicalInventory;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -34,13 +35,18 @@ public class MainPage extends AppCompatActivity {
           public boolean onNavigationItemSelected(@NonNull MenuItem item){
              switch(item.getItemId()) {
                 case R.id.navManage:
+                   Log.v(TAG, "Manage Button Tapped from MainPage");
                    Toast.makeText(MainPage.this, "Manage", Toast.LENGTH_SHORT).show();
+                   startActivity(new Intent(MainPage.this, ManageItems.class));
                    break;
                 case R.id.navHome:
+                   Log.v(TAG, "Home button tapped from MainPage");
                    Toast.makeText(MainPage.this, "Home", Toast.LENGTH_SHORT).show();
                    break;
                 case R.id.navSettings:
+                   Log.v(TAG, "Settings button tapped from MainPage");
                    Toast.makeText(MainPage.this, "Settings", Toast.LENGTH_SHORT).show();
+                   startActivity(new Intent(MainPage.this, Settings.class));
                    break;
              }
              return true;

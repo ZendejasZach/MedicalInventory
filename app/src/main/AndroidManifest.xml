@@ -9,24 +9,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ManageItems"></activity>
+
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3698634128120451~8570211581"/>
+            android:value="ca-app-pub-3698634128120451~8570211581" />
+
         <activity
-            android:name="com.example.MedicalInventory.ReOrder"
+            android:name=".ReOrder"
             android:label="@string/title_activity_re_order"
-            android:parentActivityName="com.example.MedicalInventory.MainPage"
+            android:parentActivityName=".MainPage"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.MedicalInventory.MainPage" />
         </activity>
-        <activity android:name="com.example.MedicalInventory.SettingsActivity" />
+        <activity android:name=".Settings" />
         <activity
-            android:name="com.example.MedicalInventory.MainPage"
+            android:name=".MainPage"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

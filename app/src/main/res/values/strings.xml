@@ -16,4 +16,9 @@
     <string name="intake_notes">Notes</string>
     <string name="intake_alert">Enable Low Count Alert</string>
     <string name="NavManage">Manage</string>
+    <string name="title_activity_manage">Manage</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>
