@@ -4,11 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainPage extends AppCompatActivity {
@@ -29,7 +28,7 @@ public class MainPage extends AppCompatActivity {
        setContentView(R.layout.activity_main);
 
        //NavBar
-       BottomNavigationView navBar = (BottomNavigationView) findViewById(R.id.MainNav);
+       BottomNavigationView navBar = findViewById(R.id.MainNav);
        navBar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
           @Override
           public boolean onNavigationItemSelected(@NonNull MenuItem item){
@@ -78,9 +77,24 @@ public class MainPage extends AppCompatActivity {
        for (int i = 0; i < size; i++){
           // set amt and limit
           int amt = userInventory.getAmt(i);
-       }
+          int lmt = userInventory.getLimit(i);
 
-       // Load user data
+          // check if limit has been reached
+          if (amt <= lmt && lmt !=0){
+             // populate table
+             replaceText("Item", row, userInventory.getItem(i));
+             replaceText("amt", row, Integer.toString(amt));
+             replaceText("lmt", row,Integer.toString(lmt));
+             row++;
+          }
+       }
     }
 
+   private void replaceText(String type, int row, String text) {
+       TextView textView;
+
+   }
+
+
 }
+
