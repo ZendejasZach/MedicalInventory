@@ -1,9 +1,14 @@
 package com.example.MedicalInventory;
 
 import android.os.Bundle;
+import android.view.MenuItem;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainPage extends AppCompatActivity {
     //Logging
@@ -21,6 +26,26 @@ public class MainPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
        super.onCreate(savedInstanceState);
        setContentView(R.layout.activity_main);
+
+       //NavBar
+       BottomNavigationView navBar = (BottomNavigationView) findViewById(R.id.MainNav);
+       navBar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
+          @Override
+          public boolean onNavigationItemSelected(@NonNull MenuItem item){
+             switch(item.getItemId()) {
+                case R.id.navManage:
+                   Toast.makeText(MainPage.this, "Manage", Toast.LENGTH_SHORT).show();
+                   break;
+                case R.id.navHome:
+                   Toast.makeText(MainPage.this, "Home", Toast.LENGTH_SHORT).show();
+                   break;
+                case R.id.navSettings:
+                   Toast.makeText(MainPage.this, "Settings", Toast.LENGTH_SHORT).show();
+                   break;
+             }
+             return true;
+          }
+       });
 
        // check for existing database
        if(testing == true){
@@ -50,7 +75,6 @@ public class MainPage extends AppCompatActivity {
        }
 
        // Load user data
-
-
     }
+
 }
