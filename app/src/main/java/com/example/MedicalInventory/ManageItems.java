@@ -2,13 +2,9 @@ package com.example.MedicalInventory;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.nfc.Tag;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -20,7 +16,7 @@ public class ManageItems extends AppCompatActivity {
       setContentView(R.layout.activity_manage_items);
 
       //Navbar
-      BottomNavigationView navBar = findViewById(R.id.MainNav);
+      BottomNavigationView navBar = findViewById(R.id.navManage);
       navBar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
          @Override
          public boolean onNavigationItemSelected(@NonNull MenuItem item){

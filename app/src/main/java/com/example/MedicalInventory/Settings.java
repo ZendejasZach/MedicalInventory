@@ -17,21 +17,21 @@ public class Settings extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
 
         //NavBar
-        BottomNavigationView navBar = findViewById(R.id.MainNav);
+        BottomNavigationView navBar = findViewById(R.id.navSettings);
         navBar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item){
                 switch(item.getItemId()) {
                     case R.id.navManage:
-                        Toast.makeText(Settings.this, "Manage", Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(Settings.this, "Manage", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(Settings.this, ManageItems.class));
                         break;
                     case R.id.navHome:
-                        Toast.makeText(Settings.this, "Home", Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(Settings.this, "Home", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(Settings.this, MainPage.class));
                         break;
                     case R.id.navSettings:
-                        Toast.makeText(Settings.this, "Settings", Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(Settings.this, "Settings", Toast.LENGTH_SHORT).show();
                         break;
                 }
                 return true;
