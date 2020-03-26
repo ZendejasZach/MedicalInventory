@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MedicalInventory</string>
+    <string name="app_name">Medic Manager</string>
     <string name="title_home">Inventory</string>
     <string name="title_inventory">Inventory</string>
     <string name="title_intake">Intake</string>
@@ -16,9 +16,20 @@
     <string name="intake_notes">Notes</string>
     <string name="intake_alert">Enable Low Count Alert</string>
     <string name="NavManage">Manage</string>
-    <string name="title_activity_manage">Manage</string>
+    <string name="title_activity_manage">Intake</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="ItemName">Name of Item</string>
+    <string name="itemAmt">Total Amount Received</string>
+    <string name="itemLocation">Location</string>
+    <string name="manageItemHint">Band Aids</string>
+    <string name="manageAmtHint">0</string>
+    <string name="manageLocationHint">Closet</string>
+    <string name="manageSupplier">Supplier</string>
+    <string name="manageSupplierHint">Acme Medical Company</string>
+    <string name="manageAlert">Low Amount Alert</string>
+    <string name="manageLmt">Alert Limit</string>
+    <string name="manageNotes">Notes</string>
 </resources>
