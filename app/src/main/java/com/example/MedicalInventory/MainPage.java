@@ -2,10 +2,8 @@ package com.example.MedicalInventory;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
-import android.widget.TextView;
-import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -13,7 +11,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class MainPage extends AppCompatActivity {
    //Logging
    private static final String TAG = "startPage";
-   inventoryData userInventory;
+   InventoryData userInventory;
    String filename = "medicalInv.data";
    boolean testing = true;
 
@@ -55,7 +53,7 @@ public class MainPage extends AppCompatActivity {
       // check for existing database
       if(testing == true){
          //create test database
-         userInventory = new inventoryData(filename);
+         userInventory = new InventoryData(filename);
 
          // add items to inventory
          userInventory.addItem("Band Aids", 5, 3); //Item  should not appear under needed items
@@ -63,7 +61,7 @@ public class MainPage extends AppCompatActivity {
          userInventory.addItem("G-Tube Extension", 1, 5); // should appear under needed items
       }
       if (userInventory.checkData(filename)){
-         userInventory = inventoryData.load(filename);
+         userInventory = InventoryData.load(filename);
       }
       else{
         //TODO: show error message and prompt for new database

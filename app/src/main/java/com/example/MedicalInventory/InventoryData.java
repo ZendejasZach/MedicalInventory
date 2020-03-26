@@ -3,9 +3,7 @@ package com.example.MedicalInventory;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Environment;
-
 import com.google.gson.Gson;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -14,7 +12,7 @@ import java.nio.file.Paths;
 import java.util.Vector;
 
 
-public class inventoryData extends Activity{
+public class InventoryData extends Activity{
     // User inventory
     private String userName;
     private File fInventory;
@@ -23,10 +21,10 @@ public class inventoryData extends Activity{
     Vector<InventoryItem> vInventory;
 
 /**
- * inventoryData
+ * InventoryData
  * Object that holds user and inventory data
 */
-public inventoryData(String filename) {
+public InventoryData(String filename) {
     this.userName = userName;
 
     //create blank inventory
@@ -41,12 +39,9 @@ public inventoryData(String filename) {
 /**
  * Add item
  * Add an item to the inventory vector to be saved in the inventory
- * @param item name of item to be added
- * @param amt amount of the item
- * @param limit limit for item before it alerts user to reorder
+ * @param newItem InventoryItem object that has all the details of an item
  */
-public void addItem(String item, int amt, int limit){
-    InventoryItem newItem = new InventoryItem(item, amt, limit);
+public void addItem(InventoryItem newItem){
     vInventory.add(newItem);
 }
 
@@ -87,8 +82,8 @@ public void save (Vector vInventory, String filename){
  * @param filename filename on device
  * @return
  */
-public static inventoryData load(String filename){
-    inventoryData data;
+public static InventoryData load(String filename){
+    InventoryData data;
     String sData = "";
 
    // Try and read the data
@@ -100,7 +95,7 @@ public static inventoryData load(String filename){
 
    //unstringify
    Gson gson = new Gson();
-   data = gson.fromJson(sData, inventoryData.class);
+   data = gson.fromJson(sData, InventoryData.class);
    return data;
 }
 
@@ -133,11 +128,11 @@ public static Boolean checkData(String filename){
     /**
      * Getters and setters
      */
-    public int getAmt(int i) {
-        int amt;
+    public int[] getAmt(int i) {
+        int[] amt = new int[0];
 
         if (getLength() == 0){
-            amt = 0;
+            amt[0] = 0;
         }
         else{
             amt = vInventory.get(i).getAmt();
@@ -162,7 +157,7 @@ public static Boolean checkData(String filename){
        String itemName;
        if(getLength() == 0) {
            InventoryItem item = vInventory.get(i);
-           itemName = item.getItem();
+           itemName = String.valueOf(item.getItem());
        }
        else
            itemName = "No items in inventory";
