@@ -19,6 +19,13 @@ public class ManageItems extends AppCompatActivity {
       super.onCreate(savedInstanceState);
       setContentView(R.layout.activity_manage_items);
 
+      // variables for inventory
+      String filename = "myMedicInventory";
+      InventoryData data = new InventoryData(filename);
+
+      // check for existing inventory
+      switch (data.checkData(filename))
+
       /**
        * Submit Button
        *
