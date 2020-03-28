@@ -24,7 +24,7 @@ public class ManageItems extends AppCompatActivity {
       InventoryData data = new InventoryData(filename);
 
       // check for existing inventory
-      switch (data.checkData(filename))
+//      switch (data.checkData(filename))
 
       /**
        * Submit Button

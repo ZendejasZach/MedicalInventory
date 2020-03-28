@@ -142,11 +142,11 @@ public static Boolean checkData(String filename){
 
     }
 
-    public int getLimit(int i){
-        int limit;
+    public int[] getLimit(int i){
+        int[] limit = new int[0];
 
         if (getLength() == 0)
-            limit = 0;
+            limit[0] = 0;
         else
             limit = vInventory.get(i).getLimit();
 

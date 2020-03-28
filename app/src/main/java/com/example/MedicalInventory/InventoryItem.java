@@ -55,7 +55,7 @@ public class InventoryItem extends Vector<InventoryData> {
      */
     public String[] getItem()             {return item;}
     public int[] getAmt()                 {return amt;}
-    public int getLimit()               {return limit;}
+    public int[] getLimit()               {return limit;}
     public String[] getLocation()         {return location;}
     public String[] getSupplier()         {return supplier;}
     public Boolean getAlert()             {return alert;}

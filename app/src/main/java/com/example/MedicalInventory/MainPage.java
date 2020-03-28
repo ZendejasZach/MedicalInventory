@@ -56,9 +56,9 @@ public class MainPage extends AppCompatActivity {
          userInventory = new InventoryData(filename);
 
          // add items to inventory
-         userInventory.addItem("Band Aids", 5, 3); //Item  should not appear under needed items
-         userInventory.addItem("Trach Ties", 5, 5); // Item should appear under needed items
-         userInventory.addItem("G-Tube Extension", 1, 5); // should appear under needed items
+//         userInventory.addItem("Band Aids", 5, 3); //Item  should not appear under needed items
+//         userInventory.addItem("Trach Ties", 5, 5); // Item should appear under needed items
+//         userInventory.addItem("G-Tube Extension", 1, 5); // should appear under needed items
       }
       if (userInventory.checkData(filename)){
          userInventory = InventoryData.load(filename);

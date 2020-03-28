@@ -73,13 +73,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         android:text="@string/itemAmt"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/manageAmtField"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/manageItemNameField" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/manageAmtField"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/manageItemName"
@@ -141,7 +139,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:text="@string/manageNotes"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textSize="18sp"
