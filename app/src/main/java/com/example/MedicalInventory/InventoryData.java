@@ -58,10 +58,9 @@ public void removeItem(InventoryItem item, Vector vInventory){
  * save inventory
  * Saves the items in the inventory to a JSON file on the device
  *
- * @param vInventory currently loaded inventory
  * @param filename filename that will be used for the JSON file
  */
-public void save (Vector vInventory, String filename){
+public void save (String filename){
     // stringify
     Gson gson = new Gson();
     String json = gson.toJson(vInventory);
@@ -128,11 +127,11 @@ public static Boolean checkData(String filename){
     /**
      * Getters and setters
      */
-    public int[] getAmt(int i) {
-        int[] amt = new int[0];
+    public int getAmt(int i) {
+        int amt;
 
         if (getLength() == 0){
-            amt[0] = 0;
+            amt = 0;
         }
         else{
             amt = vInventory.get(i).getAmt();
@@ -142,11 +141,11 @@ public static Boolean checkData(String filename){
 
     }
 
-    public int[] getLimit(int i){
-        int[] limit = new int[0];
+    public int getLimit(int i){
+        int limit;
 
         if (getLength() == 0)
-            limit[0] = 0;
+            limit = 0;
         else
             limit = vInventory.get(i).getLimit();
 

@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Switch;
-
+import android.widget.Toast;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class ManageItems extends AppCompatActivity {
@@ -20,8 +20,8 @@ public class ManageItems extends AppCompatActivity {
       setContentView(R.layout.activity_manage_items);
 
       // variables for inventory
-      String filename = "myMedicInventory";
-      InventoryData data = new InventoryData(filename);
+      final String filename = "myMedicInventory";
+      final InventoryData iData = new InventoryData(filename);
 
       // check for existing inventory
 //      switch (data.checkData(filename))
@@ -31,52 +31,52 @@ public class ManageItems extends AppCompatActivity {
        *
        * Takes the values in the fields and enters them into the inventory.
        */
-      //Variables
-      final String[] sItemName = new String[1];
-      final int[] iItemAmt = new int[1];
-      final String[] sItemLocation = new String[1];
-      final String[] sItemSupplier = new String[1];
-      final boolean bItemAlert = false;
-      final int[] iItemAlertAmt = new int[1];
-      final String[] sItemNotes = new String[1];
+      // Activity Variables
+      final EditText itemName = (EditText) findViewById(R.id.manageItemNameField);
+      final EditText itemAmt = (EditText) findViewById(R.id.manageAmtField);
+      final EditText itemLocation = (EditText) findViewById(R.id.manageLocationField);
+      final EditText itemSupplier = (EditText) findViewById(R.id.manageSupplierField);
+      final Switch sItemAlert = (Switch) findViewById(R.id.AlertSwitch);
+      final EditText itemAlertAmt = (EditText) findViewById(R.id.manageLmtField);
+      final EditText itemNotes = (EditText) findViewById(R.id.manageNotesField);
+      Button submitButton = (Button) findViewById(R.id.manageSubmitBtn);
 
-      final EditText itemName;
-      final EditText itemAmt;
-      final EditText itemLocation;
-      final EditText itemSupplier;
-      Switch itemAlert;
-      final EditText itemAlertAmt;
-      EditText itemNotes = null;
-      Button submitButton;
-
-      //Grab values
-      itemName = (EditText) findViewById(R.id.manageItemNameField);
-      itemAmt = (EditText) findViewById(R.id.manageAmtField);
-      itemLocation = (EditText) findViewById(R.id.manageLocationField);
-      itemSupplier = (EditText) findViewById(R.id.manageSupplierField);
-      itemAlert = (Switch) findViewById(R.id.switch3);
-      itemAlertAmt = (EditText) findViewById(R.id.manageLmtField);
-      submitButton = (Button) findViewById(R.id.manageSubmitBtn);
-
-      final EditText finalItemNotes = itemNotes;
+      // on submit
       submitButton.setOnClickListener(new View.OnClickListener(){
          @Override
          public void onClick (View v) {
-            sItemName[0] = itemName.getText().toString();
-            iItemAmt[0] = Integer.valueOf(itemAmt.getText().toString());
-            sItemLocation[0] = itemLocation.getText().toString();
-            sItemSupplier[0] = itemSupplier.getText().toString();
-            //TODO: find how to cast Bool.
-//            bItemAlert = itemAlert.getText().toString();
-            iItemAlertAmt[0] = Integer.valueOf(itemAlertAmt.getText().toString());
-            sItemNotes[0] = finalItemNotes.getText().toString();
+            //Variables
+            String sItemName = itemName.getText().toString();
+            final Integer iItemAmt = Integer.valueOf(itemAmt.getText().toString());
+            final String sItemLocation = itemLocation.getText().toString();
+            final String sItemSupplier = itemSupplier.getText().toString();
+            final Boolean bItemAlert;
+
+            if(sItemAlert.isChecked()){
+               bItemAlert = true;
+            }
+            else{
+               bItemAlert = false;
+            }
+
+            final Integer iItemAlertAmt = Integer.valueOf(itemAlertAmt.getText().toString());
+            final String sItemNotes = itemNotes.getText().toString();
+
+            //set variables to new InventoryItem object
+            InventoryItem newItem = new InventoryItem(sItemName, iItemAmt, sItemLocation, sItemSupplier, bItemAlert, iItemAlertAmt, sItemNotes);
+
+            //Testing
+            System.out.println("Name " + newItem.getItem());
+
+            //send to inventory
+            iData.addItem(newItem);
+            iData.save(filename);
+
+            //confirmation
+            Toast toast = Toast.makeText(getApplicationContext(), "Inventory Item Created", Toast.LENGTH_LONG);
+            toast.show();
+
          }
-
-         //set variables to new InventoryItem object
-         InventoryItem newItem = new InventoryItem(sItemName, iItemAmt, iItemAlertAmt, sItemLocation, sItemSupplier, bItemAlert, sItemNotes);
-
-         // insert item into inventory
-
       });
 
 
