@@ -33,4 +33,5 @@
     <string name="manageLmt">Alert Limit</string>
     <string name="manageNotes">Notes</string>
     <string name="manageSubmit">Submit</string>
+    <string name="manageNotesHint">Any additional notes about this item</string>
 </resources>

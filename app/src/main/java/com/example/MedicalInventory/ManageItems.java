@@ -4,10 +4,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.Switch;
 import android.widget.Toast;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -70,15 +74,16 @@ public class ManageItems extends AppCompatActivity {
 
             //send to inventory
             iData.addItem(newItem);
-            iData.save(filename);
 
             //confirmation
             Toast toast = Toast.makeText(getApplicationContext(), "Inventory Item Created", Toast.LENGTH_LONG);
             toast.show();
 
+            // return to main page
+            startActivity(new Intent (ManageItems.this, MainPage.class));
+
          }
       });
-
 
       //Navbar
       BottomNavigationView navBar = findViewById(R.id.navManage);
