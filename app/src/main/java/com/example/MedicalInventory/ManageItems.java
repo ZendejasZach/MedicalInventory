@@ -74,6 +74,7 @@ public class ManageItems extends AppCompatActivity {
 
             //send to inventory
             iData.addItem(newItem);
+            iData.save(filename);
 
             //confirmation
             Toast toast = Toast.makeText(getApplicationContext(), "Inventory Item Created", Toast.LENGTH_LONG);

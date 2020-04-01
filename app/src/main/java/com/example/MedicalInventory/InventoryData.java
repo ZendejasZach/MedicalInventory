@@ -116,51 +116,12 @@ public static Boolean checkData(String filename){
 }
 
     /**
-     * Checks the size of the inventory
-     *
-     * @return
-     */
-    public int getLength() {
-    return vInventory.size();
-    }
-
-    /**
      * Getters and setters
      */
-    public int getAmt(int i) {
-        int amt;
+    public InventoryItem getItem(int i)     {return vInventory.get(i);}
+    public int getLength()                  { return vInventory.size(); }
+    public String getName(int i)            { return vInventory.get(i).getItem(); }
+    public int getAmt(int i)                { return vInventory.get(i).getAmt(); }
+    public int getLimit(int i)              { return vInventory.get(i).getLimit(); }
 
-        if (getLength() == 0){
-            amt = 0;
-        }
-        else{
-            amt = vInventory.get(i).getAmt();
-        }
-
-        return amt;
-
-    }
-
-    public int getLimit(int i){
-        int limit;
-
-        if (getLength() == 0)
-            limit = 0;
-        else
-            limit = vInventory.get(i).getLimit();
-
-        return limit;
-    }
-
-    public String getItem(int i){
-       String itemName;
-       if(getLength() == 0) {
-           InventoryItem item = vInventory.get(i);
-           itemName = String.valueOf(item.getItem());
-       }
-       else
-           itemName = "No items in inventory";
-
-       return itemName;
-    }
 }

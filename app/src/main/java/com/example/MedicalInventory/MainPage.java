@@ -3,17 +3,26 @@ package com.example.MedicalInventory;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.ads.mediation.customevent.CustomEventAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.Collections;
+import java.util.List;
+
 public class MainPage extends AppCompatActivity {
-   //Logging
+   // variables
    private static final String TAG = "startPage";
    InventoryData userInventory;
    String filename = "medicalInv.data";
    boolean testing = true;
+   private ListView myList;
 
    /**
     * Activity Creation
@@ -55,10 +64,18 @@ public class MainPage extends AppCompatActivity {
          //create test database
          userInventory = new InventoryData(filename);
 
-         // add items to inventory
-//         userInventory.addItem("Band Aids", 5, 3); //Item  should not appear under needed items
-//         userInventory.addItem("Trach Ties", 5, 5); // Item should appear under needed items
-//         userInventory.addItem("G-Tube Extension", 1, 5); // should appear under needed items
+         // Create test items
+         InventoryItem test1 = new InventoryItem("BandAids", 5, "Closet", "Acme Meds", true, 5, "Things and notes");
+         InventoryItem test2 = new InventoryItem("Trachs", 1, "Closet", "Acme Meds", false, 5, "Things and notes");
+         InventoryItem test3 = new InventoryItem("G-Tube Pads", 15, "Closet", "Acme Meds", true, 10, "Things and notes");
+
+         // Add items to inventory
+         userInventory.addItem(test1);
+         userInventory.addItem(test2);
+         userInventory.addItem(test3);
+
+         // save inventory
+         userInventory.save(filename);
       }
       if (userInventory.checkData(filename)){
          userInventory = InventoryData.load(filename);
@@ -67,32 +84,32 @@ public class MainPage extends AppCompatActivity {
         //TODO: show error message and prompt for new database
       }
 
+      // Populate items for listView
+      int size = userInventory.getLength();
+      String name[] = new String[size];
+      String amt[] = new String[size];
+      String limit[] = new String[size];
 
-      // Populate table
-//       int size = userInventory.getLength();
-//       int row = 1;
-//
-//       for (int i = 0; i < size; i++){
-//          // set amt and limit
-//          int amt = userInventory.getAmt(i);
-//          int lmt = userInventory.getLimit(i);
-//
-//          // check if limit has been reached
-//          if (amt <= lmt && lmt !=0){
-//             // populate table
-//             replaceText("Item", row, userInventory.getItem(i));
-//             replaceText("amt", row, Integer.toString(amt));
-//             replaceText("lmt", row,Integer.toString(lmt));
-//             row++;
-//          }
-//       }
+      for (int i = 0; i < userInventory.getLength(); i++){
+         name[i] = userInventory.getName(i);
+         amt[i] = String.valueOf(userInventory.getAmt(i));
+         limit[i] = String.valueOf(userInventory.getLimit(i));
+      }
+      // populate listView
+
+      myList = (ListView) findViewById(R.id.MainPageList);
+      ArrayAdapter<String> arrayAdapter1 = new ArrayAdapter<String>(
+              this,
+              android.R.layout.simple_list_item_1,
+              name);
+
+      ArrayAdapter<String> arrayAdapter2 = new ArrayAdapter<String>(
+              this,
+              android.R.layout.simple_list_item_2,
+              amt);
+
+      myList.setAdapter(arrayAdapter1);
+      myList.setAdapter(arrayAdapter2);
    }
-
-//   private void replaceText(String type, int row, String text) {
-//       TextView textView;
-
-//   }
-
-
 }
 
